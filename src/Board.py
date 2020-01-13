@@ -7,6 +7,7 @@ class Board:
 
     def generate_board(self):
         self.fill_all_boxes()
+        self.remove_elements(32)
 
     def fill_all_boxes(self):
         flag = [False for _ in range(9)]
@@ -29,6 +30,16 @@ class Board:
             # If none of numbers fit, backtrack to previous block
             if flag.count(True) == 9:
                 return False
+    
+    def remove_elements(self, count):
+        while count != 0:
+            index = randint(0, 80)
+            row, col = int(index / 9), index % 9
+            while self.board[row][col - 1 if col != 0 else col] == 0:
+                index = randint(0, 80)
+                row, col = int(index / 9), index % 9 - 1
+            self.board[row][col - 1 if col != 0 else col] = 0
+            count -= 1
 
     # Check entire row whether a number is used
     def row_is_safe(self, row, num):
