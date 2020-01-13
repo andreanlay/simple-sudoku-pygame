@@ -41,6 +41,24 @@ class Board:
             self.board[row][col - 1 if col != 0 else col] = 0
             count -= 1
 
+    def solve(self):
+        empty = self.find_empty()
+
+        # If no more empty box, finish solving
+        if empty is None:
+            return True
+
+        row, col = empty[0], empty[1]
+
+        for num in range(1, 10):
+            if self.safe_to_fill(row, col, num):
+                self.board[row][col] = num
+                if self.solve():
+                    return True
+                # Backtracking if no valid number
+                self.board[row][col] = 0
+        return False
+
     # Check entire row whether a number is used
     def row_is_safe(self, row, num):
         for i in range(9):
