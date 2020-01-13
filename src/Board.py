@@ -7,19 +7,9 @@ class Board:
         self.generate_board()
 
     def generate_board(self):
-        self.fill_diagonal_boxes()
-        self.fill_remaining_boxes()
+        self.fill_all_boxes()
 
-    def fill_diagonal_boxes(self):
-        for i in range(0, 9, 3):
-            for k in range(3):
-                for l in range(3):
-                    num = randint(1, 9)
-                    while self.innerbox_is_safe(i, i, num) is False:
-                        num = randint(1, 9)
-                    self.board[i+k][i+l] = num
-
-    def fill_remaining_boxes(self):
+    def fill_all_boxes(self):
         flag = [False for _ in range(9)]
         empty = self.find_empty()
 
@@ -33,7 +23,7 @@ class Board:
             flag[num - 1] = True
             if self.safe_to_fill(row, col, num):
                 self.board[row][col] = num
-                if self.fill_remaining_boxes():
+                if self.fill_all_boxes():
                     return True
                 self.board[row][col] = 0
 
