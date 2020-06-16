@@ -24,4 +24,4 @@ GUI-based Sudoku game that includes only basic feature of ordinary sudoku game, 
 
 ## Acknowledgments
 
-* [Tech For Tim](https://www.youtube.com/channel/UC4JX40jDee_tINbkjycV4Sg) - For newbie guide on creating GUI
+* [Tech With Tim](https://www.youtube.com/channel/UC4JX40jDee_tINbkjycV4Sg) - For newbie guide on creating GUI
