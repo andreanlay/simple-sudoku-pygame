@@ -2,6 +2,8 @@
 
 GUI-based Sudoku game that includes only basic feature of ordinary sudoku game, it generate random board for everytime we play the game. Board generating and solver use Backtracking algorithm to try every combinations and backtrack if current state not going to provide solution.
 
+![](https://github.com/andreanlay/simple-sudoku-pygame/blob/app/screenshot.png)
+
 ### Prerequisites
 
 * Python 3 and up
