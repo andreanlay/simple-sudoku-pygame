@@ -7,6 +7,7 @@ class Box:
     COLOR_GRAY = (128, 128, 128)
     COLOR_BLACK = (0, 0, 0)
     COLOR_RED = (255, 0, 0)
+    COLOR_WHITE = (255, 255, 255)
 
     def __init__(self, val, row, col, width, height):
         self.value = val  # Current box value
@@ -30,7 +31,7 @@ class Box:
             text = font.render(str(self.temp), 1, self.COLOR_GRAY)
             window.blit(text, (x + 3, y + 3))  # Draw small number in upper-left corner
         elif self.value != 0:
-            text = font.render(str(self.value), 1, self.COLOR_BLACK)
+            text = font.render(str(self.value), 1, self.COLOR_WHITE)
             window.blit(text, (x + (gap/2 - text.get_width()/2), y + (gap/2 - text.get_height()/2)))  # Draw number in the middle
 
         if self.selected:

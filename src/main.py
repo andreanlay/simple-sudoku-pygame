@@ -5,12 +5,12 @@ from Game import Game
 
 
 def redraw_window(win, board, time):
-    win.fill((255, 255, 255))
+    win.fill((0, 0, 0))
     font = pg.font.Font("resources/OpenSans-Regular.ttf", 26)
-    text = font.render("Time: " + util.format_time(time), 1, (0, 0, 0))
+    text = font.render("Time: " + util.format_time(time), 1, (255, 255, 255))
     win.blit(text, (540 - 160, 555))  # Draw time on bottom right corner
 
-    text = font.render("?", 1, (0, 0, 0))
+    text = font.render("?", 1, (255, 255, 255))
     win.blit(text, (20, 555))  # Draw help on bottom left corner
 
     board.draw(win)

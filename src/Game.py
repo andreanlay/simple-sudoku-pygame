@@ -28,8 +28,8 @@ class Game:
                 thick = 4
             else:
                 thick = 1
-            pg.draw.line(window, (0, 0, 0), (0, i * gap), (self.width, i * gap), thick)  # Draw horizontal line
-            pg.draw.line(window, (0, 0, 0), (i * gap, 0), (i * gap, self.height), thick)  # Draw vertical line
+            pg.draw.line(window, (255, 255, 255), (0, i * gap), (self.width, i * gap), thick)  # Draw horizontal line
+            pg.draw.line(window, (255, 255, 255), (i * gap, 0), (i * gap, self.height), thick)  # Draw vertical line
 
         for i in range(9):
             for j in range(9):
